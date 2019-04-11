@@ -26,11 +26,11 @@
 
 <script>
 export default {
-    props : {
-        tabs : {
-            type : Array
-        }
+  props: {
+    tabs: {
+      type: Array
     }
+  }
 }
 </script>
 
@@ -50,12 +50,11 @@ export default {
     align-items: center;
 }
 #footer a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .active{
-    color: #ff5f16;
+  color: #ff5f16;
 }
 </style>
-
