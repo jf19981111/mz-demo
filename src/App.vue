@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
+    <FooterBar :tabs="tabs"></FooterBar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import FooterBar from './components/FooterBar.vue';
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      tabs : [
+        { name : '电影',href : '/films',icon : 'icon-dianying' },
+        { name : '影院',href : '/cinemas',icon : 'icon-yingyuana' },
+        { name : '特惠',href : '/sales',icon : 'icon-tehui' },
+        { name : '我的',href : '/center',icon : 'icon-wode' },
+      ]
+    }
+  },
+  components : {
+    FooterBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './styles/reset.css';
+@import './styles/index.css'; 
 </style>

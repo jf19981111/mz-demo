@@ -1,0 +1,210 @@
+body,html {
+    height: 100%;
+}
+/* warp 容器 */
+#warp {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+#header {
+    display: flex;
+    flex-direction: column;
+}
+/* top S */
+.top {
+    position: relative;
+}
+/* 城市定位 */
+.city {
+    position: absolute;
+    top: .18rem;
+    left: .07rem;
+    color: #fff;
+    z-index: 10;
+    font-size: .13rem;
+    background: rgba(0,0,0,.2);
+    height: .30rem;
+    line-height: .30rem;
+    border-radius: .15rem;
+    text-align: center;
+    padding: 0 0.1rem;
+}
+/* banner 图 */
+.banner {
+    widows: 100%;
+    height: 1.4rem;
+    position: relative;
+}
+.banner a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+/* 小圆点 */
+.swipe {
+    position: absolute;
+    right: .12rem;
+    bottom: 0.06rem;
+}
+.swipe li {
+    float: left;
+    width: .06rem;
+    height: .06rem;
+    border-radius: 0.04rem;
+    border: 1px solid #fff;
+    margin: 0 0.02rem;
+    box-sizing: border-box;
+}
+/* top E */
+/* tabBar S */
+.tabBar {
+    position: relative;
+    height: .40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #dedede;
+    background: #fff;
+}
+.tabBar a {
+    width: 50%;
+    text-align: center;
+    display: block;
+    line-height: .40rem;
+}
+.tabBar a span {
+    display: inline-block;
+    /* border-bottom: 1px solid tomato; */
+}
+.tabBar a:focus span {
+    border-bottom: 1px solid tomato;
+}
+/* tabBar E */
+/* main S */
+#main {
+    flex: 1;
+    /* background: skyblue; */
+    position: absolute;
+    width: 100%;
+    top: 1.81rem;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#main ul {
+    background: #fff;
+    margin-left: .15rem;
+}
+#main ul li {
+    padding: 0.15rem 0.15rem 0.15rem 0;
+    height: .94rem;
+    position: relative;
+}
+#main ul li:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #ededed;
+    color: #ededed;
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+}
+.playing {
+    display: flex;
+    justify-content: center;
+}
+/* 左边部分 */
+.playing .p_left {
+    width: .66rem;
+    height: .94rem;
+    background: rgb(249, 249, 249);
+}
+.playing .p_left a {
+    display: block;
+}
+.playing .p_left img {
+    width: .64rem;
+}
+/* 中间部分 */
+.p_center {
+    width: calc(100% - 116px);
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+}
+ .info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.p_center .film-name .name {
+    color: #191a1b;
+    font-size: .16rem;
+    height: .22rem;
+    line-height: .22rem;
+    margin-right: .05rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.p_center .film-name span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.p_center .film-name .item {
+    font-size: .09rem;
+    color: #fff;
+    background-color: #d2d6dc;
+    height: .14rem;
+    line-height: .14rem;
+    padding: 0 0.02rem;
+    border-radius: 0.02rem;
+}
+.film-grade .label {
+    font-size: .13rem;
+    margin-top: 0.04rem;
+    color: #797d82;
+}
+.film-grade .grade {
+    color: #ffb232;
+    font-size: .14rem;
+}
+.p_right {
+    width: 33.3%;
+    height: 0.25rem;
+}
+.film-buy {
+    line-height: 0.25rem;
+    height: 0.24rem;
+    width: 0.50rem;
+    color: #ff5f16;
+    font-size: 0.13rem;
+    text-align: center;
+    border-radius: 2px;
+    position: relative;
+    margin-top: 0.19rem;
+}
+.film-buy:after{
+    content: " ";
+    transform: scale(.5);
+    position: absolute;
+    border: 1px solid #ff5f16;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    border-radius: 4px;
+}
+/* main E */
