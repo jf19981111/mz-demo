@@ -14,7 +14,7 @@
 </template>
 
 <script>
-const Swiper = this.Swiper
+// const Swiper = this.Swiper
 export default {
   // 对 banner 发送请求 定义的形参
   props: {
