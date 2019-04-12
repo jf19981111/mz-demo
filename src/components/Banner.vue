@@ -15,6 +15,8 @@
 
 <script>
 // const Swiper = this.Swiper
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
 export default {
   // 对 banner 发送请求 定义的形参
   props: {
