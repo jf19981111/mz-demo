@@ -6,20 +6,20 @@
 </template>
 
 <script>
-import FooterBar from './components/FooterBar.vue';
+import FooterBar from './components/FooterBar.vue'
 export default {
   name: 'app',
-  data() {
+  data () {
     return {
-      tabs : [
-        { name : '电影',href : '/films',icon : 'icon-dianying' },
-        { name : '影院',href : '/cinemas',icon : 'icon-yingyuana' },
-        { name : '特惠',href : '/sales',icon : 'icon-tehui' },
-        { name : '我的',href : '/center',icon : 'icon-wode' },
+      tabs: [
+        { name: '电影', href: '/films', icon: 'icon-dianying' },
+        { name: '影院', href: '/cinemas', icon: 'icon-yingyuana' },
+        { name: '特惠', href: '/sales', icon: 'icon-tehui' },
+        { name: '我的', href: '/center', icon: 'icon-wode' }
       ]
     }
   },
-  components : {
+  components: {
     FooterBar
   }
 }
@@ -27,5 +27,4 @@ export default {
 
 <style>
 @import './styles/reset.css';
-@import './styles/index.css'; 
 </style>

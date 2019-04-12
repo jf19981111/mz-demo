@@ -2,25 +2,25 @@
 /* CSS Document */
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
 body,html{
-	font:.12rem "微软雅黑",Arial;
-	color:#6c6c6c;	
+	font:12px "微软雅黑",Arial;
+	color:#6c6c6c;
 }
 h1,h2,h3,h4,h5,h6,b,strong{
 	font-weight:normal;
-	font-size:100%;	
+	font-size:100%;
 }
 i,em{
-	font-style:normal;	
+	font-style:normal;
 }
 a{
 	text-decoration:none;
-	color:#6c6c6c;	
+	color:#6c6c6c;
 }
 li{
-	list-style:none;	
+	list-style:none;
 }
 input{
-	outline:none;	
+	outline:none;
 }
 .clearfix{
 	zoom:1;
@@ -32,4 +32,3 @@ input{
 	clear:both;
 	overflow:hidden;/* 溢出隐藏 */
 }
-
