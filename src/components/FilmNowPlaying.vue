@@ -47,16 +47,16 @@ export default {
       filmList: [],
       pageNum: 1,
       pageSize: 15,
-      total: 10 //一共有多少条数据
+      total: 10 // 一共有多少条数据
 
     }
   },
 
   computed: {
-      // 总的页数
-      totalPage() {
-        return Math.ceil(this.total / this.pageSize)
-      }
+    // 总的页数
+    totalPage () {
+      return Math.ceil(this.total / this.pageSize)
+    }
   },
   methods: {
     getList () {
@@ -76,8 +76,8 @@ export default {
         let data = res.data
         if (data.status === 0) {
           this.total = data.data.total
-        // 对请求的数据进行追加
-        // this.filmList = data.data.films
+          // 对请求的数据进行追加
+          // this.filmList = data.data.films
           this.filmList = this.filmList.concat(data.data.films)
         // this.filmList = this.filmList.push(...data.data.films)
         } else {
@@ -99,10 +99,10 @@ export default {
      * 这里使用方法 而不用计算属性 是因为 我们需要传参
      */
     actorsFn (actors = []) {
-        let temp = actors.map(item => {
-            return item.name
-        })
-    //   console.log(temp)
+      let temp = actors.map(item => {
+        return item.name
+      })
+      //   console.log(temp)
       return temp.join('、')
     }
   },
