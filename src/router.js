@@ -24,6 +24,7 @@ export default new VueRouter({
     },
 
     { path: '/film/:id', name: 'detail', component: () => import('./views/Detail.vue') },
+    { path: '/city', component: () => import('./views/City.vue') },
     { path: '*', redirect: '/films/nowPlaying' }
   ]
 })
