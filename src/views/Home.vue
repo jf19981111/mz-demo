@@ -25,11 +25,11 @@ export default {
   components: {
     FooterBar
   },
-  beforeDestroy() {
-      console.log('=====home被销毁=====')
+  beforeDestroy () {
+    console.log('=====home被销毁=====')
   },
-  beforeCreate() {
-      console.log('====home被重新创建了====')
+  beforeCreate () {
+    console.log('====home被重新创建了====')
   }
 }
 </script>

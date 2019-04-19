@@ -1,0 +1,99 @@
+<template>
+  <div class="login-view">
+    <div class="logo">
+      <img src="https://assets.maizuo.com/h5/mz-auth/public/app/img/logo.19ca0be.png">
+    </div>
+    <div class="login-form">
+      <div class="form-group">
+        <input placeholder="用户名" class="input-control" type="text" v-model="username">
+      </div>
+      <div class="form-group">
+        <input placeholder="密码" class="input-control" type="password" v-model="password">
+      </div>
+      <div class="submit login-btn" @click="handleLogin">
+        <span>登录</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    handleLogin () {
+      window.isLogin = true
+      // 假设登录成功，我们需要做的事情就是：跳转回去
+      // 1. 不管如何都跳转首页
+      // 看需求 用 push 还是 replace
+      // this.$router.push('/films/nowPlaying')
+      // 2. 用户本来想要进入哪里 就让他回到哪里
+      var redirect = this.$route.query.redirect || '/'
+      this.$router.push(redirect)
+    }
+  }
+}
+</script>
+
+<style lang="less">
+@import '../styles/common/mixins.less';
+
+body {
+  background: #fff;
+}
+
+.login-view {
+  font-size: 16px;
+  overflow: hidden;
+
+  .logo {
+    margin: 79px auto 40px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+
+    img {
+      height: 60px;
+    }
+  }
+
+  .login-form {
+
+    .form-group {
+      .border-1-bottom;
+      line-height: 55px;
+      margin: 0 25px;
+      position: relative;
+
+      .input-control {
+        height: 15px;
+        line-height: 15px;
+        padding: 20px 0;
+        width: 100%;
+        font-size: 15px;
+        color: #191a1b;
+        border: 0;
+        outline-width: 0;
+      }
+    }
+
+    .submit {
+      line-height: 45px;
+      font-size: 16px;
+      margin: 70px 25px 0;
+      border-radius: 3px;
+      text-align: center;
+      background-color: #ff5f16;
+      height: 44px;
+      color: #fff;
+      border: none;
+    }
+  }
+}
+
+</style>

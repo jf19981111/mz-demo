@@ -36,7 +36,7 @@
             <li
                 v-for="city in item.list"
                 :key="city.cityId"
-                
+
             >{{ city.name }}</li>
             <!-- <li>安阳</li>
             <li>安阳</li>
@@ -66,83 +66,83 @@
 <script>
 import Axios from 'axios'
 export default {
-    data() {
-        return {
-            citys: [], // 从后台接口中直接得到的数据
-        }
-    },
-    /**
+  data () {
+    return {
+      citys: [] // 从后台接口中直接得到的数据
+    }
+  },
+  /**
      * 对城市数据进行二次计算
      */
-    computed: {
-        myCitys() {
-            var index = 0;
-            var flag = {};
-            var result = [];
-            this.citys.forEach(item => {
-                var py = item.pinyin.substr(0,1).toUpperCase()
-                if (flag[py]) {
-                    result[flag[py] - 1].list.push(item)
-                } else {
-                    var obj = {
-                        py: py,
-                        list: [ item ]
-                    }
-                    flag[py] = ++index
-                    result.push(obj)
-                }
-            })
-            result.sort((a,b) => {
-                return a.py.charCodeAt() - b.py.charCodeAt()
-            })
-            return result
-        },
-        hotCitys() {
-           return this.citys.filter(item => {
-                return item.isHot
-            })
-        },
-        pys() {
-           return this.myCitys.map(item => {
-                return item.py
-            })
+  computed: {
+    myCitys () {
+      var index = 0
+      var flag = {}
+      var result = []
+      this.citys.forEach(item => {
+        var py = item.pinyin.substr(0, 1).toUpperCase()
+        if (flag[py]) {
+          result[flag[py] - 1].list.push(item)
+        } else {
+          var obj = {
+            py: py,
+            list: [ item ]
+          }
+          flag[py] = ++index
+          result.push(obj)
         }
+      })
+      result.sort((a, b) => {
+        return a.py.charCodeAt() - b.py.charCodeAt()
+      })
+      return result
     },
-    
-    methods: {
-        /**
+    hotCitys () {
+      return this.citys.filter(item => {
+        return item.isHot
+      })
+    },
+    pys () {
+      return this.myCitys.map(item => {
+        return item.py
+      })
+    }
+  },
+
+  methods: {
+    /**
          * 获取城市列表数据
          */
-        getCityList() {
-            Axios.get('https://m.maizuo.com/gateway?k=8675184', {
-                headers: {
-                    'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.0.4","e":"15544840671756641624924"}',
-                    'X-Host': 'mall.film-ticket.city.list'
-                }
-            }).then(res => {
-                let data = res.data;
-                // console.log(data)
-                if (data.status === 0) {
-                    this.citys = data.data.cities;
-                } else {
-                    alert(data.msg)
-                }
-            })
-        },
-        /**
+    getCityList () {
+      Axios.get('https://m.maizuo.com/gateway?k=8675184', {
+        headers: {
+          'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.0.4","e":"15544840671756641624924"}',
+          'X-Host': 'mall.film-ticket.city.list'
+        }
+      }).then(res => {
+        let data = res.data
+        // console.log(data)
+        if (data.status === 0) {
+          this.citys = data.data.cities
+        } else {
+          alert(data.msg)
+        }
+      })
+    },
+    /**
          * 点击跳转
          */
-        fn(py) {
-            // 1. 得到左侧相应的距离顶部的距离
-            var el = document.getElementById(py)
-            console.log(el.offsetTop)
-            var box = document.getElementById('lv-indexlist__content')
-            box.scrollTop = el.offsetTop
-        }
-    },
-    created() {
-        this.getCityList()
+    fn (py) {
+      // 1. 得到左侧相应的距离顶部的距离
+      var el = document.getElementById(py)
+      console.log(el.offsetTop)
+      var box = document.getElementById('lv-indexlist__content')
+      box.scrollTop = el.offsetTop
     }
+  },
+  created () {
+    this.getCityList()
+  }
 }
 </script>
 
